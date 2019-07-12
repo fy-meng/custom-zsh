@@ -60,6 +60,6 @@ fi
 
 # modify .zshrc
 python add_plugins.py
-if [[ ! -n $(sed -ne "s/export DEFAULT_USER=\(.*\)/\1/p" ~/.zshrc) ]]; then
+if [[ ! -n $(sed -ne "s/export DEFAULT_USER=\(.*\)/\1/p" ~/.zshrc) && -n $default_user ]]; then
   echo "\n# default user to hide agnoster prompt\nexport DEFAULT_USER=$default_user\n" >> ~/.zshrc
 fi
