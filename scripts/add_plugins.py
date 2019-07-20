@@ -3,7 +3,7 @@ from __future__ import print_function
 import os
 import re
 
-new_plugins = ["git", "autojump", "zsh-autosuggestions", "zsh-syntax-highlighting"]
+new_plugins = ["git", "autojump", "zsh-autosuggestions", "fast-syntax-highlighting"]
 
 with open(os.path.expanduser('~/.zshrc')) as f:
     s = f.read()
