@@ -4,7 +4,7 @@ This script installs Zsh with a custom agnoster theme and some userful plugins.
 
 ## Usages
 
-- Run `sudo ./install.sh`;
+- Run `./install.sh`;
 - Confirm your default username. The command prompt will show your current 
   username unless it's currently on your default user. If you want to show 
   the current user at all time, answer `n` when prompted 
@@ -38,10 +38,10 @@ The script also installs the following zsh plugins:
 - [`autojump`](https://github.com/wting/autojump): smart directory jump;
 - [`zsh-autosuggestions`](https://github.com/zsh-users/zsh-autosuggestions):
   command completion suggestion based on history;
-- [`zsh-syntax-highlighting`](https://github.com/zsh-users/zsh-syntax-highlighting):
-  syntax highlighting for command line prompt.
+- [`fast-syntax-highlighting`](https://github.com/zdharma/fast-syntax-highlighting):
+  better syntax highlighting for command line prompt.
 
-For examples, check out the [showcase](#showcase) section.
+Please check out the [showcase](#showcase) section for examples.
 
 ## Color Schemes
 
