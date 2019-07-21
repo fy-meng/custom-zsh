@@ -27,9 +27,7 @@ for dep in curl git python zsh; do
 done
 
 # set zsh as the default shell
-if [[ $SHELL != $(which zsh) ]]; then
-  chsh -s $(which zsh)
-fi
+chsh -s $(which zsh)
 
 # install oh-my-zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
@@ -61,7 +59,6 @@ if [[ ! -f ~/Library/Fonts/Menlo\ for\ Powerline.ttf ]]; then
 fi
 
 # modify .zshrc
-python add_plugins.py
-if [[ ! -n $(sed -ne "s/export DEFAULT_USER=\(.*\)/\1/p" ~/.zshrc) && -n $default_user ]]; then
-  echo "\n# default user to hide agnoster prompt\nexport DEFAULT_USER=$default_user\n" >> ~/.zshrc
-fi
+python scripts/modify_zshrc.py $default_user
+
+echo "Done"
