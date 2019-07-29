@@ -34,7 +34,7 @@ print("Changed plugins to {}".format(plugins))
 if not re.findall('\nexport DEFAULT_USER=.*', s):
     s += "\n# default user to hide agnoster prompt" \
          "\nexport DEFAULT_USER={}\n".format(sys.argv[1])
-    print("Added DEFAULT_USER={}".format(sys.arv[1]))
+    print("Added DEFAULT_USER={}".format(sys.argv[1]))
 
 print("Writing to ~/.zshrc...")
 # clear .zshrc
