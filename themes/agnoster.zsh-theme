@@ -215,14 +215,14 @@ prompt_virtualenv() {
 
 # Status:
 # - was there an error
-# - am I root
 # - are there background jobs?
+# - am I root
 prompt_status() {
   local -a symbols
 
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✕"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⦿"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
