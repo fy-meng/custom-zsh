@@ -18,13 +18,19 @@ if [[ ! -n $(which brew) ]]; then
   ruby -e "$(curl -fsSL https://raw.zshhubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# install dependencies:
-for dep in curl git python zsh; do
+# install dependencies
+for dep in curl git python; do
   if [[ ! -n $(which $dep) ]]; then
     echo "Installing $dep..."
     brew install $dep
   fi
 done
+
+# install zsh
+if [[ $(which zsh) != $HOME/zsh ]]; then
+  echo "Installing zsh..."
+  brew install zsh
+fi
 
 # set zsh as the default shell
 chsh -s $(which zsh)
