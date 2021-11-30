@@ -64,6 +64,9 @@ if [[ ! -f ~/Library/Fonts/Menlo\ for\ Powerline.ttf ]]; then
   rm -rf Menlo-for-Powerline
 fi
 
+# install trash
+brew install trash
+
 # modify .zshrc
 python scripts/modify_zshrc.py $default_user
 
