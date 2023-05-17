@@ -90,9 +90,9 @@ prompt_end() {
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     if [[ -n "$HOST_NICKNAME" ]]; then
-      prompt_segment black default "%(!.%{%F{yellow}%}.)%n@$HOST_NICKNAME"
+      prompt_segment black default "%(!.%{%F{yellow}%}.)$(whoami | cut -d@ -f1)@$HOST_NICKNAME"
     else
-      prompt_segment black default "%(!.%{%F{yellow}%}.)%n"
+      prompt_segment black default "%(!.%{%F{yellow}%}.)$(whoami | cut -d@ -f1)"
     fi
   fi
 }
